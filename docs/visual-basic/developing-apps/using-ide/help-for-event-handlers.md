@@ -1,13 +1,13 @@
 ---
 title: "Help for Event Handlers in Visual Basic Code | Microsoft Docs"
-
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
-
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "CheckedListBox1_SelectedIndexChanged"
@@ -49,23 +49,11 @@ ms.assetid: 2c92decf-844e-4ba4-82c7-f2fc0adc3002
 caps.latest.revision: 10
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # Help for Event Handlers in Visual Basic Code
+[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+
 To get Help on a particular event handler while in the code editor, put your cursor on the `Handles` clause at the back end of the event procedure, then press F1. For example, in the `Form1_Load` statement below, the correct place to put the cursor is in `MyBase.Load`:  
   
 ```  
@@ -76,5 +64,5 @@ End Sub
 ```  
   
 ## See Also  
- [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)   
- [Event Handlers Overview](http://msdn.microsoft.com/library/228112e1-1711-42ee-8ffa-ff3555bffe66)
+ [Events](../Topic/Handling%20and%20Raising%20Events.md)   
+ [Event Handlers Overview](../Topic/Event%20Handlers%20Overview%20\(Windows%20Forms\).md)

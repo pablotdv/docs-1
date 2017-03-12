@@ -1,0 +1,1 @@
+For the latest documentation on Visual Studio 2017 RC, see [Visual Studio 2017 RC Documentation](http://docs.microsoft.com/visualstudio).

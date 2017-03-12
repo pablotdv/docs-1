@@ -1,8 +1,8 @@
 ---
-title: "Getting Started (LINQ to XML) | Microsoft Docs"
+title: "Getting Started (LINQ to XML)1 | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,14 +15,11 @@ ms.assetid: c3a9062d-9d51-4a8e-bac6-071d16a7d9ea
 caps.latest.revision: 3
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: "wpickett"
 ---
 # Getting Started (LINQ to XML)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 The following topics introduce LINQ to XML.  
   
 ## In This Section  
@@ -31,7 +28,7 @@ The following topics introduce LINQ to XML.
 |-----------|-----------------|  
 |[LINQ to XML Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-overview.md)|Provides an overview of the LINQ to XML technology.|  
 |[LINQ to XML vs. DOM (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)|Compares LINQ to XML to the Document Object Model (DOM).|  
-|[LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)|Compares LINQ to XML to other XML parsing and manipulation technologies: XmlReader, XSLT, MSXML, and XmlLite.|  
+|[LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs.-other-xml-technologies.md)|Compares LINQ to XML to other XML parsing and manipulation technologies: XmlReader, XSLT, MSXML, and XmlLite.|  
   
 ## See Also  
  [Reference (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/reference-linq-to-xml.md)   

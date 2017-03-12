@@ -1,13 +1,13 @@
 ---
 title: "Nested function does not have a signature that is compatible with delegate &#39;&lt;delegatename&gt;&#39; | Microsoft Docs"
-
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "vbc36532"
@@ -20,32 +20,20 @@ ms.assetid: 493f292c-d81e-40ef-8b47-61f020571829
 caps.latest.revision: 5
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # Nested function does not have a signature that is compatible with delegate &#39;&lt;delegatename&gt;&#39;
+[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+
 A lambda expression has been assigned to a delegate that has an incompatible signature. For example, in the following code, delegate `Del` has two integer parameters.  
   
-```vb  
+```vb#  
 Delegate Function Del(ByVal p As Integer, ByVal q As Integer) As Integer  
 ```  
   
  The error is raised if a lambda expression with one argument is declared as type `Del`:  
   
-```vb  
+```vb#  
 ' Neither of these is valid.   
 ' Dim lambda1 As Del = Function(n As Integer) n + 1  
 ' Dim lambda2 As Del = Function(n) n + 1  
@@ -53,7 +41,7 @@ Delegate Function Del(ByVal p As Integer, ByVal q As Integer) As Integer
   
  **Error ID:** BC36532  
   
-## To correct this error  
+### To correct this error  
   
 -   Adjust either the delegate definition or the assigned lambda expression so that the signatures are compatible.  
   

@@ -2,7 +2,7 @@
 title: "Functional Transformation of XML (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,9 +15,11 @@ ms.assetid: fdbe5b91-f457-4b4e-a11b-def4bdd77bab
 caps.latest.revision: 3
 author: "stevehoag"
 ms.author: "shoag"
-
+manager: "wpickett"
 ---
 # Functional Transformation of XML (Visual Basic)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 This topic discusses the pure functional transformation approach to modifying XML documents, and contrasts it with a procedural approach.  
   
 ## Modifying an XML Document  
@@ -36,11 +38,11 @@ This topic discusses the pure functional transformation approach to modifying XM
   
  LINQ to XML provides the tools necessary to code pure functional transformations in an expressive and powerful way, within C# or Visual Basic code. For example, many of the examples in the LINQ to XML documentation use a pure functional approach. Also, in the [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) tutorial, we use LINQ to XML in a functional approach to manipulate information in a Microsoft Word document.  
   
- For a more complete comparison of LINQ to XML with other Microsoft XML technologies, see [LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md).  
+ For a more complete comparison of LINQ to XML with other Microsoft XML technologies, see [LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs.-other-xml-technologies.md).  
   
  XSLT is the recommended tool for  document-centric transformations when the source document has an irregular structure. However, LINQ to XML can also perform document-centric transforms. For more information, see [How to: Use Annotations to Transform LINQ to XML Trees in an XSLT Style (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-use-annotation-trees-to-transform-linq-to-xml-trees-in-an-xslt-style.md).  
   
 ## See Also  
  [Introduction to Pure Functional Transformations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
- [LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)   
- [LINQ to XML vs. Other XML Technologies](http://msdn.microsoft.com/library/7ba1eecf-f09a-42de-bc80-22ca5b2e42d3)
+ [LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs.-other-xml-technologies.md)   
+ [LINQ to XML vs. Other XML Technologies](../Topic/LINQ%20to%20XML%20vs.%20Other%20XML%20Technologies1.md)

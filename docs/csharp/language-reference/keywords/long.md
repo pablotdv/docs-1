@@ -1,9 +1,13 @@
 ---
 title: "long (C# Reference) | Microsoft Docs"
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "long_CSharpKeyword"
@@ -16,22 +20,11 @@ ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
 caps.latest.revision: 17
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # long (C# Reference)
+[!INCLUDE[csharpbanner](../../../csharp/includes/csharpbanner.md)]
+
 The `long` keyword denotes an integral type that stores values according to the size and range shown in the following table.  
   
 |Type|Range|Size|.NET Framework type|  
@@ -101,7 +94,7 @@ long y = (long)3.0;   // OK: explicit conversion
 ```  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
   
 ## See Also  
  <xref:System.Int64>   

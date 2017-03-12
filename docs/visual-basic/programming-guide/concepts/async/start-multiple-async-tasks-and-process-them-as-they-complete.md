@@ -2,7 +2,7 @@
 title: "Start Multiple Async Tasks and Process Them As They Complete (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,14 +15,11 @@ ms.assetid: 57ffb748-af40-4794-bedd-bdb7fea062de
 caps.latest.revision: 3
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: "wpickett"
 ---
 # Start Multiple Async Tasks and Process Them As They Complete (Visual Basic)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 By using <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName>, you can start multiple tasks at the same time and process them one by one as they’re completed rather than process them in the order in which they're started.  
   
  The following example uses a query to create a collection of tasks. Each task downloads the contents of a specified website. In each iteration of a while loop, an awaited call to `WhenAny` returns the task in the collection of tasks that finishes its download first. That task is removed from the collection and processed. The loop repeats until the collection contains no more tasks.  
@@ -56,20 +53,33 @@ By using <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName>,
   
  The **CancelAfterOneTask** project already includes a query that, when executed, creates a collection of tasks. Each call to `ProcessURLAsync` in the following code returns a <xref:System.Threading.Tasks.Task%601> where `TResult` is an integer.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```vb  
+Dim downloadTasksQuery As IEnumerable(Of Task(Of Integer)) =  
+    From url In urlList Select ProcessURLAsync(url, client, ct)  
+```  
+  
  In the MainWindow.xaml.vb file of the  project, make the following changes to the `AccessTheWebAsync` method.  
   
 -   Execute the query by applying <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> instead of <xref:System.Linq.Enumerable.ToArray%2A>.  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+    ```vb  
+    Dim downloadTasks As List(Of Task(Of Integer)) = downloadTasksQuery.ToList()  
+    ```  
+  
 -   Add a while loop that performs the following steps for each task in the collection.  
   
     1.  Awaits a call to `WhenAny` to identify the first task in the collection to finish its download.  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
+        ```vb  
+        Dim firstFinishedTask As Task(Of Integer) = Await Task.WhenAny(downloadTasks)  
+        ```  
+  
     2.  Removes that task from the collection.  
   
-<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
+        ```vb  
+        downloadTasks.Remove(firstFinishedTask)  
+        ```  
+  
     3.  Awaits `firstFinishedTask`, which is returned by a call to `ProcessURLAsync`. The `firstFinishedTask` variable is a <xref:System.Threading.Tasks.Task%601> where `TReturn` is an integer. The task is already complete, but you await it to retrieve the length of the downloaded website, as the following example shows.  
   
         ```vb  
@@ -181,12 +191,12 @@ Class MainWindow
         Dim urls = New List(Of String) From  
             {  
                 "http://msdn.microsoft.com",  
-                "http://msdn.microsoft.com/library/hh290138.aspx",  
-                "http://msdn.microsoft.com/library/hh290140.aspx",  
-                "http://msdn.microsoft.com/library/dd470362.aspx",  
-                "http://msdn.microsoft.com/library/aa578028.aspx",  
-                "http://msdn.microsoft.com/library/ms404677.aspx",  
-                "http://msdn.microsoft.com/library/ff730837.aspx"  
+                "http://msdn.microsoft.com/en-us/library/hh290138.aspx",  
+                "http://msdn.microsoft.com/en-us/library/hh290140.aspx",  
+                "http://msdn.microsoft.com/en-us/library/dd470362.aspx",  
+                "http://msdn.microsoft.com/en-us/library/aa578028.aspx",  
+                "http://msdn.microsoft.com/en-us/library/ms404677.aspx",  
+                "http://msdn.microsoft.com/en-us/library/ff730837.aspx"  
             }  
         Return urls  
     End Function  
@@ -208,5 +218,5 @@ End Class
 ## See Also  
  <xref:System.Threading.Tasks.Task.WhenAny%2A>   
  [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
+ [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/asynchronous-programming-with-async-and-await.md)   
  [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046)

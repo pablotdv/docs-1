@@ -1,9 +1,13 @@
 ---
 title: "ulong (C# Reference) | Microsoft Docs"
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "ulong_CSharpKeyword"
@@ -16,22 +20,11 @@ ms.assetid: f2ece624-837a-40cf-92c5-343e7f33397c
 caps.latest.revision: 16
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # ulong (C# Reference)
+[!INCLUDE[csharpbanner](../../../csharp/includes/csharpbanner.md)]
+
 The `ulong` keyword denotes an integral type that stores values according to the size and range shown in the following table.  
   
 |Type|Range|Size|.NET Framework type|  
@@ -106,7 +99,7 @@ ulong y = (ulong)3.0;
  For more information on implicit numeric conversion rules, see the [Implicit Numeric Conversions Table](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
   
 ## See Also  
  <xref:System.UInt64>   

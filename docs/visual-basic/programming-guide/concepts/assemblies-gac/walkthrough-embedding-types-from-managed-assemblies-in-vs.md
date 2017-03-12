@@ -2,7 +2,7 @@
 title: "Walkthrough: Embedding Types from Managed Assemblies in Visual Studio (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,14 +15,11 @@ ms.assetid: 56ed12ba-adff-4e9c-a668-7fcba80c4795
 caps.latest.revision: 3
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: "wpickett"
 ---
 # Walkthrough: Embedding Types from Managed Assemblies in Visual Studio (Visual Basic)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 If you embed type information from a strong-named managed assembly, you can loosely couple types in an application to achieve version independence. That is, your program can be written to use types from multiple versions of a managed library without having to be recompiled for each version.  
   
  Type embedding is frequently used with COM interop, such as an application that uses automation objects from Microsoft Office. Embedding type information enables the same build of a program to work with different versions of Microsoft Office on different computers. However, you can also use type embedding with a fully managed solution.  
@@ -59,7 +56,7 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 -   Run the client program to see that the new version of the runtime assembly is being used without having to recompile the client program.  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+ [!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note-settings-general-md.md)]  
   
 ## Creating an Interface  
   
@@ -73,11 +70,21 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 4.  Right-click the TypeEquivalenceInterface project and click **Properties**. Click the **Compile** tab. Set the output path to a valid location on your development computer, such as `C:\TypeEquivalenceSample`. This location will also be used in a later step in this walkthrough.  
   
-5.  While still editing the project properties, click the **Signing** tab. Select the **Sign the assembly** option. In the **Choose a strong name key file** list, click **<New...>**. In the **Key file name** box, type `key.snk`. Clear the **Protect my key file with a password** check box. Click **OK**.  
+5.  While still editing the project properties, click the **Signing** tab. Select the **Sign the assembly** option. In the **Choose a strong name key file** list, click **\<New...>**. In the **Key file name** box, type `key.snk`. Clear the **Protect my key file with a password** check box. Click **OK**.  
   
 6.  Open the ISampleInterface.vb file. Add the following code to the ISampleInterface class file to create the ISampleInterface interface.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+    ```vb  
+    Imports System.Runtime.InteropServices  
+  
+    <ComImport()>  
+    <Guid("8DA56996-A151-4136-B474-32784559F6DF")>  
+    Public Interface ISampleInterface  
+        Sub GetUserInput()  
+        ReadOnly Property UserInput As String  
+    End Interface  
+    ```  
+  
 7.  On the **Tools** menu, click **Create Guid**. In the **Create GUID** dialog box, click **Registry Format** and then click **Copy**. Click **Exit**.  
   
 8.  In the `Guid` attribute, delete the sample GUID and paste in the GUID that you copied from the **Create GUID** dialog box. Remove the braces ({}) from the copied GUID.  
@@ -86,7 +93,10 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 10. In **Solution Explorer**, expand the **My Project** folder. Double-click the AssemblyInfo.vb. Add the following attribute to the file.  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+    ```vb  
+    <Assembly: ImportedFromTypeLib("")>  
+    ```  
+  
      Save the file.  
   
 11. Save the project.  
@@ -105,7 +115,7 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 4.  Right-click the TypeEquivalenceRuntime project and click **Properties**. Click the **Compile** tab. Set the output path to the same location you used in the TypeEquivalenceInterface project, for example, `C:\TypeEquivalenceSample`.  
   
-5.  While still editing the project properties, click the **Signing** tab. Select the **Sign the assembly** option. In the **Choose a strong name key file** list, click **<New...>**. In the **Key file name** box, type `key.snk`. Clear the **Protect my key file with a password** check box. Click **OK**.  
+5.  While still editing the project properties, click the **Signing** tab. Select the **Sign the assembly** option. In the **Choose a strong name key file** list, click **\<New...>**. In the **Key file name** box, type `key.snk`. Clear the **Protect my key file with a password** check box. Click **OK**.  
   
 6.  Right-click the TypeEquivalenceRuntime project and click **Add Reference**. Click the **Browse** tab and browse to the output path folder. Select the TypeEquivalenceInterface.dll file and click **OK**.  
   
@@ -115,7 +125,26 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 9. Add the following code to the SampleClass class file to create the SampleClass class.  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
+    ```vb  
+    Imports TypeEquivalenceInterface  
+  
+    Public Class SampleClass  
+        Implements ISampleInterface  
+  
+        Private p_UserInput As String  
+        Public ReadOnly Property UserInput() As String Implements ISampleInterface.UserInput  
+            Get  
+                Return p_UserInput  
+            End Get  
+        End Property  
+  
+        Public Sub GetUserInput() Implements ISampleInterface.GetUserInput  
+            Console.WriteLine("Please enter a value:")  
+            p_UserInput = Console.ReadLine()  
+        End Sub  
+    End Class  
+    ```  
+  
 10. Save the project.  
   
 11. Right-click the TypeEquivalenceRuntime project and click **Build**. The class library .dll file is compiled and saved to the specified build output path (for example, C:\TypeEquivalenceSample).  
@@ -138,7 +167,25 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 7.  Add the following code to the Module1.vb file to create the client program.  
   
-<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
+    ```vb  
+    Imports TypeEquivalenceInterface  
+    Imports System.Reflection  
+  
+    Module Module1  
+  
+        Sub Main()  
+            Dim sampleAssembly = Assembly.Load("TypeEquivalenceRuntime")  
+            Dim sampleClass As ISampleInterface = CType( _  
+                sampleAssembly.CreateInstance("TypeEquivalenceRuntime.SampleClass"), ISampleInterface)  
+            sampleClass.GetUserInput()  
+            Console.WriteLine(sampleClass.UserInput)  
+            Console.WriteLine(sampleAssembly.GetName().Version)  
+            Console.ReadLine()  
+        End Sub  
+  
+    End Module  
+    ```  
+  
 8.  Press CTRL+F5 to build and run the program.  
   
 ## Modifying the Interface  
@@ -151,7 +198,10 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 3.  Open the ISampleInterface.vb file. Add the following line of code to the ISampleInterface interface.  
   
-<CodeContentPlaceHolder>4</CodeContentPlaceHolder>  
+    ```vb  
+    Function GetDate() As Date  
+    ```  
+  
      Save the file.  
   
 4.  Save the project.  
@@ -168,11 +218,11 @@ If you embed type information from a strong-named managed assembly, you can loos
   
 3.  Open the SampleClass.vbfile. Add the following lines of code to the SampleClass class.  
   
-```vb  
-Public Function GetDate() As DateTime Implements ISampleInterface.GetDate  
-    Return Now  
-End Function  
-```  
+    ```vb  
+    Public Function GetDate() As DateTime Implements ISampleInterface.GetDate  
+        Return Now  
+    End Function  
+    ```  
   
      Save the file.  
   
@@ -183,7 +233,7 @@ End Function
 6.  In File Explorer, open the output path folder (for example, C:\TypeEquivalenceSample). Double-click the TypeEquivalenceClient.exe to run the program. The program will reflect the new version of the TypeEquivalenceRuntime assembly without having been recompiled.  
   
 ## See Also  
- [/link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link.md)   
- [Programming Concepts](../../../../visual-basic/programming-guide/concepts/index.md)   
- [Programming with Assemblies](http://msdn.microsoft.com/library/25918b15-701d-42c7-95fc-c290d08648d6)   
- [Assemblies and the Global Assembly Cache (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+ [/link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link-visual-basic.md)   
+ [Visual Basic Programming Guide](../../../../visual-basic/programming-guide/index.md)   
+ [Programming with Assemblies](../Topic/Programming%20with%20Assemblies.md)   
+ [Assemblies and the Global Assembly Cache (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/assemblies-and-the-global-assembly-cache-visual-basic.md)

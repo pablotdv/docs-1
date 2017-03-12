@@ -1,9 +1,13 @@
 ---
 title: "byte (C# Reference) | Microsoft Docs"
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "byte"
@@ -16,22 +20,11 @@ ms.assetid: 111f1db9-ca32-4f0e-b497-4783517eda47
 caps.latest.revision: 19
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # byte (C# Reference)
+[!INCLUDE[csharpbanner](../../../csharp/includes/csharpbanner.md)]
+
 The `byte` keyword denotes an integral type that stores values as indicated in the following table.  
   
 |Type|Range|Size|.NET Framework type|  
@@ -109,7 +102,7 @@ SampleMethod((byte)5);
  For more information on implicit numeric conversion rules, see the [Implicit Numeric Conversions Table](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
   
 ## See Also  
  <xref:System.Byte>   

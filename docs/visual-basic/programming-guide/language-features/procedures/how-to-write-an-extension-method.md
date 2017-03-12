@@ -2,12 +2,12 @@
 title: "How to: Write an Extension Method (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "VB"
@@ -19,23 +19,11 @@ ms.assetid: fb2739cc-958d-4ef4-a38b-214a74c93413
 caps.latest.revision: 11
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # How to: Write an Extension Method (Visual Basic)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 Extension methods enable you to add methods to an existing class. The extension method can be called as if it were an instance of that class.  
   
 ### To define an extension method  
@@ -66,7 +54,7 @@ Extension methods enable you to add methods to an existing class. The extension 
 ## Example  
  The following example declares an extension method in module `StringExtensions`. A second module, `Module1`, imports `StringExtensions` and calls the method. The extension method must be in scope when it is called. Extension method `PrintAndPunctuate` extends the <xref:System.String> class with a method that displays the string instance followed by a string of punctuation symbols sent in as a parameter.  
   
-```vb  
+```vb#  
 ' Declarations will typically be in a separate module.  
 Imports System.Runtime.CompilerServices  
   
@@ -80,7 +68,7 @@ Module StringExtensions
 End Module  
 ```  
   
-```vb  
+```vb#  
 ' Import the module that holds the extension method you want to use,   
 ' and call it.  
   
@@ -106,7 +94,7 @@ End Module
   
 ## See Also  
  <xref:System.Runtime.CompilerServices.ExtensionAttribute>   
- [Extension Methods](./extension-methods.md)   
+ [Extension Methods](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)   
  [Module Statement](../../../../visual-basic/language-reference/statements/module-statement.md)   
- [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md)   
+ [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
  [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

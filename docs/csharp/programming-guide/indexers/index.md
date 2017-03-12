@@ -1,13 +1,13 @@
 ---
 title: "Indexers (C# Programming Guide) | Microsoft Docs"
-
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
-
-
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "cs.indexers"
@@ -20,28 +20,16 @@ ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
 caps.latest.revision: 29
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # Indexers (C# Programming Guide)
+[!INCLUDE[csharpbanner](../../../csharp/includes/csharpbanner.md)]
+
 Indexers allow instances of a class or struct to be indexed just like arrays. Indexers resemble [properties](../../../csharp/programming-guide/classes-and-structs/properties.md) except that their accessors take parameters.  
   
  In the following example, a generic class is defined and provided with simple [get](../../../csharp/language-reference/keywords/get.md) and [set](../../../csharp/language-reference/keywords/set.md) accessor methods as a means of assigning and retrieving values. The `Program` class creates an instance of this class for storing strings.  
   
- [!code-cs[csProgGuideIndexers#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_1.cs)]  
+ [!code-cs[csProgGuideIndexers#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_1.cs)]  
   
 > [!NOTE]
 >  For more examples, see [Related Sections](../../../csharp/programming-guide/indexers/index.md#BKMK_RelatedSections).  
@@ -49,7 +37,7 @@ Indexers allow instances of a class or struct to be indexed just like arrays. In
 ## Expression Body Definitions  
  It is common to have indexers that simply return immediately with the result of an expression.  There is a syntax shortcut for defining these indexers using `=>`:  
   
-```cs  
+```c#  
 public Customer this[long id] => store.LookupCustomer(id);  
 ```  
   
@@ -82,7 +70,7 @@ public Customer this[long id] => store.LookupCustomer(id);
 -   [Restricting Accessor Accessibility](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
   
 ## See Also  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)   

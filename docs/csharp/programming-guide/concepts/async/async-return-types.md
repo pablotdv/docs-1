@@ -2,12 +2,12 @@
 title: "Async Return Types (C#) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "CSharp"
@@ -15,15 +15,12 @@ ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
 caps.latest.revision: 3
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: "wpickett"
 ---
 # Async Return Types (C#)
-Async methods have three possible return types: <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, and void. In Visual Basic, the void return type is written as a [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) procedure. For more information about async methods, see [Asynchronous Programming with async and await (C#)](../../../../csharp/programming-guide/concepts/async/index.md).  
+[!INCLUDE[csharpbanner](../../../../csharp/includes/csharpbanner.md)]
+
+Async methods have three possible return types: <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, and void. In Visual Basic, the void return type is written as a [Sub](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md) procedure. For more information about async methods, see [Asynchronous Programming with async and await (C#)](../../../../csharp/programming-guide/concepts/async/asynchronous-programming-with-async-and-await.md).  
   
  Each return type is examined in one of the following sections, and you can find a full example that uses all three types at the end of the topic.  
   
@@ -35,7 +32,7 @@ Async methods have three possible return types: <xref:System.Threading.Tasks.Tas
   
  In the following example, the `TaskOfT_MethodAsync` async method contains a return statement that returns an integer. Therefore, the method declaration must specify a return type of `Task<int>`.  
   
-```cs  
+```c#  
 // TASK<T> EXAMPLE  
 async Task<int> TaskOfT_MethodAsync()  
 {  
@@ -61,7 +58,7 @@ async Task<int> TaskOfT_MethodAsync()
   
  The following code calls and awaits method `TaskOfT_MethodAsync`. The result is assigned to the `result1` variable.  
   
-```cs  
+```c#  
 // Call and await the Task<T>-returning async method in the same statement.  
 int result1 = await TaskOfT_MethodAsync();  
 ```  
@@ -71,7 +68,7 @@ int result1 = await TaskOfT_MethodAsync();
 > [!WARNING]
 >  The <xref:System.Threading.Tasks.Task%601.Result%2A> property is a blocking property. If you try to access it before its task is finished, the thread that's currently active is blocked until the task completes and the value is available. In most cases, you should access the value by using `await` instead of accessing the property directly.  
   
-```cs  
+```c#  
 // Call and await in separate statements.  
 Task<int> integerTask = TaskOfT_MethodAsync();  
   
@@ -83,7 +80,7 @@ int result2 = await integerTask;
   
  The display statements in the following code verify that the values of the `result1` variable, the `result2` variable, and the `Result` property are the same. Remember that the `Result` property is a blocking property and shouldn't be accessed before its task has been awaited.  
   
-```cs  
+```c#  
 // Display the values of the result1 variable, the result2 variable, and  
 // the integerTask.Result property.  
 textBox1.Text += String.Format("\r\nValue of result1 variable:   {0}\r\n", result1);  
@@ -96,7 +93,7 @@ textBox1.Text += String.Format("Value of integerTask.Result: {0}\r\n", integerTa
   
  In the following example, async method `Task_MethodAsync` doesn't contain a return statement. Therefore, you specify a return type of `Task` for the method, which enables `Task_MethodAsync` to be awaited. The definition of the `Task` type doesn't include a `Result` property to store a return value.  
   
-```cs  
+```c#  
 // TASK EXAMPLE  
 async Task Task_MethodAsync()  
 {  
@@ -115,7 +112,7 @@ async Task Task_MethodAsync()
   
  The following code calls and awaits method `Task_MethodAsync`.  
   
-```cs  
+```c#  
 // Call and await the Task-returning async method in the same statement.  
 await Task_MethodAsync();  
 ```  
@@ -124,7 +121,16 @@ await Task_MethodAsync();
   
  The following code separates calling `Task_MethodAsync` from awaiting the task that `Task_MethodAsync` returns.  
   
-<CodeContentPlaceHolder>6</CodeContentPlaceHolder>  
+```c#  
+// Call and await in separate statements.  
+Task simpleTask = Task_MethodAsync();  
+  
+// You can do other work that does not rely on simpleTask before awaiting.  
+textBox1.Text += String.Format("\r\nApplication can continue working while the Task runs. . . .\r\n");  
+  
+await simpleTask;  
+```  
+  
 ##  <a name="BKMK_VoidReturnType"></a> Void Return Type  
  The primary use of the void return type is in event handlers, where a void return type is required. A void return also can be used to override void-returning methods or for methods that perform activities that can be categorized as "fire and forget." However, you should return a `Task` wherever possible, because a void-returning async method can't be awaited. Any caller of such a method must be able to continue to completion without waiting for the called async method to finish, and the caller must be independent of any values or exceptions that the async method generates.  
   
@@ -134,7 +140,21 @@ await Task_MethodAsync();
   
  The following code defines an async event handler.  
   
-<CodeContentPlaceHolder>7</CodeContentPlaceHolder>  
+```c#  
+// VOID EXAMPLE  
+private async void button1_Click(object sender, RoutedEventArgs e)  
+{  
+    textBox1.Clear();  
+  
+    // Start the process and await its completion. DriverAsync is a   
+    // Task-returning async method.  
+    await DriverAsync();  
+  
+    // Say goodbye.  
+    textBox1.Text += "\r\nAll done, exiting button-click event handler.";  
+}  
+```  
+  
 ##  <a name="BKMK_Example"></a> Complete Example  
  The following Windows Presentation Foundation (WPF) project contains the code examples from this topic.  
   
@@ -158,7 +178,7 @@ await Task_MethodAsync();
   
 6.  In the **XAML** window of MainWindow.xaml, replace the code with the following code.  
   
-    ```cs  
+    ```c#  
     <Window x:Class="AsyncReturnTypes.MainWindow"  
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
@@ -178,7 +198,7 @@ await Task_MethodAsync();
   
 8.  Replace the code in MainWindow.xaml.cs with the following code.  
   
-    ```cs  
+    ```c#  
     using System;  
     using System.Collections.Generic;  
     using System.Linq;  

@@ -1,9 +1,13 @@
 ---
 title: "C# Operators | Microsoft Docs"
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "cs.operators"
@@ -27,22 +31,11 @@ ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
 caps.latest.revision: 40
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # C# Operators
+[!INCLUDE[csharpbanner](../../../csharp/includes/csharpbanner.md)]
+
 C# provides many operators, which are symbols that specify which operations (math, indexing, function call, etc.) to perform in an expression.  You can [overload](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) many operators to change their meaning when applied to a user-defined type.  
   
  Operations on integral types (such as `==`, `!=`, `<`, `>`, `&`, `|`) are generally allowed on enumeration (`enum`) types.  
@@ -58,7 +51,7 @@ C# provides many operators, which are symbols that specify which operations (mat
   
  [f(x)](../../../csharp/language-reference/operators/invocation-operator.md) – function invocation.  
   
- [a&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md) – aggregate object indexing.  
+ [a&#91;x&#93;](../../../csharp/language-reference/operators/operator-csharp-reference.md) – aggregate object indexing.  
   
  [a?&#91;x&#93;](../../../csharp/language-reference/operators/null-conditional-operators.md) – null conditional indexing.  Returns null if the left hand operand is null.  
   
@@ -87,7 +80,7 @@ C# provides many operators, which are symbols that specify which operations (mat
   
  [+x](../../../csharp/language-reference/operators/addition-operator.md) – returns the value of x.  
   
- [-x](../../../csharp/language-reference/operators/subtraction-operator.md) – numeric negation.  
+ [-x](../../../csharp/language-reference/operators/operator-csharp-reference.md) – numeric negation.  
   
  [!x](../../../csharp/language-reference/operators/logical-negation-operator.md) – logical negation.  
   
@@ -110,7 +103,7 @@ C# provides many operators, which are symbols that specify which operations (mat
   
  [x * y](../../../csharp/language-reference/operators/multiplication-operator.md) – multiplication.  
   
- [x / y](../../../csharp/language-reference/operators/division-operator.md) – division.  If the operands are integers, the result is an integer truncated toward zero (for example, `-7 / 2 is -3`).  
+ [x / y](../../../csharp/language-reference/operators/operator-csharp-reference.md) – division.  If the operands are integers, the result is an integer truncated toward zero (for example, `-7 / 2 is -3`).  
   
  [x % y](../../../csharp/language-reference/operators/modulus-operator.md) – modulus.  If the operands are integers, this returns the remainder of dividing x by y.  If `q = x / y` and `r = x % y`, then `x = q * y + r`.  
   
@@ -119,7 +112,7 @@ C# provides many operators, which are symbols that specify which operations (mat
   
  [x + y](../../../csharp/language-reference/operators/addition-operator.md) – addition.  
   
- [x – y](../../../csharp/language-reference/operators/subtraction-operator.md) – subtraction.  
+ [x – y](../../../csharp/language-reference/operators/operator-csharp-reference.md) – subtraction.  
   
 ## Shift Operators  
  These operators have higher precedence than the next section and lower precedence than the previous section.  NOTE, you can click on the operators to go the detailed pages with examples.  
@@ -192,11 +185,11 @@ C# provides many operators, which are symbols that specify which operations (mat
   
  [x += y](../../../csharp/language-reference/operators/addition-assignment-operator.md) – increment.  Add the value of `y` to the value of `x`, store the result in `x`, and return the new value.  If `x` designates an `event`, then `y` must be an appropriate function that C# adds as an event handler.  
   
- [x -= y](../../../csharp/language-reference/operators/subtraction-assignment-operator.md) – decrement.  Subtract the value of `y` from the value of `x`, store the result in `x`, and return the new value.  If `x` designates an `event`, then `y` must be an appropriate function that C# removes as an event handler  
+ [x -= y](../../../csharp/language-reference/operators/operator-csharp-reference.md) – decrement.  Subtract the value of `y` from the value of `x`, store the result in `x`, and return the new value.  If `x` designates an `event`, then `y` must be an appropriate function that C# removes as an event handler  
   
  [x *= y](../../../csharp/language-reference/operators/multiplication-assignment-operator.md) – multiplication assignment.  Multiply the value of `y` to the value of `x`, store the result in `x`, and return the new value.  
   
- [x /= y](../../../csharp/language-reference/operators/division-assignment-operator.md) – division assignment.  Divide the value of `x` by the value of `y`, store the result in `x`, and return the new value.  
+ [x /= y](../../../csharp/language-reference/operators/operator-csharp-reference.md) – division assignment.  Divide the value of `x` by the value of `y`, store the result in `x`, and return the new value.  
   
  [x %= y](../../../csharp/language-reference/operators/modulus-assignment-operator.md) – modulus assignment.  Divide the value of `x` by the value of `y`, store the remainder in `x`, and return the new value.  
   
@@ -213,7 +206,7 @@ C# provides many operators, which are symbols that specify which operations (mat
  [=>](../../../csharp/language-reference/operators/lambda-operator.md) – lambda declaration.  
   
 ## Arithmetic Overflow  
- The arithmetic operators ([+](../../../csharp/language-reference/operators/addition-operator.md), [-](../../../csharp/language-reference/operators/subtraction-operator.md), [*](../../../csharp/language-reference/operators/multiplication-operator.md), [/](../../../csharp/language-reference/operators/division-operator.md)) can produce results that are outside the range of possible values for the numeric type involved. You should refer to the section on a particular operator for details, but in general:  
+ The arithmetic operators ([+](../../../csharp/language-reference/operators/addition-operator.md), [-](../../../csharp/language-reference/operators/operator-csharp-reference.md), [*](../../../csharp/language-reference/operators/multiplication-operator.md), [/](../../../csharp/language-reference/operators/operator-csharp-reference.md)) can produce results that are outside the range of possible values for the numeric type involved. You should refer to the section on a particular operator for details, but in general:  
   
 -   Integer arithmetic overflow either throws an <xref:System.OverflowException> or discards the most significant bits of the result. Integer division by zero always throws a `DivideByZeroException`.  
   

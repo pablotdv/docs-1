@@ -2,12 +2,12 @@
 title: "Structures and Other Programming Elements (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "VB"
@@ -21,23 +21,11 @@ ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
 caps.latest.revision: 13
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # Structures and Other Programming Elements (Visual Basic)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 You can use structures in conjunction with arrays, objects, and procedures, as well as with each other. The interactions use the same syntax as these elements use individually.  
   
 > [!NOTE]
@@ -46,7 +34,7 @@ You can use structures in conjunction with arrays, objects, and procedures, as w
 ## Structures and Arrays  
  A structure can contain an array as one or more of its elements. The following example illustrates this.  
   
-```vb  
+```vb#  
 Public Structure systemInfo  
     Public cPU As String  
     Public memory As Long  
@@ -57,7 +45,7 @@ End Structure
   
  You access the values of an array within a structure the same way you access a property on an object. The following example illustrates this.  
   
-```vb  
+```vb#  
 Dim mySystem As systemInfo  
 ReDim mySystem.diskDrives(3)  
 mySystem.diskDrives(0) = "1.44 MB"  
@@ -65,13 +53,13 @@ mySystem.diskDrives(0) = "1.44 MB"
   
  You can also declare an array of structures. The following example illustrates this.  
   
-```vb  
+```vb#  
 Dim allSystems(100) As systemInfo  
 ```  
   
  You follow the same rules to access the components of this data architecture. The following example illustrates this.  
   
-```vb  
+```vb#  
 ReDim allSystems(5).diskDrives(3)  
 allSystems(5).CPU = "386SX"  
 allSystems(5).diskDrives(2) = "100M SCSI"  
@@ -80,7 +68,7 @@ allSystems(5).diskDrives(2) = "100M SCSI"
 ## Structures and Objects  
  A structure can contain an object as one or more of its elements. The following example illustrates this.  
   
-```vb  
+```vb#  
 Protected Structure userInput  
     Public userName As String  
     Public inputForm As System.Windows.Forms.Form  
@@ -93,7 +81,7 @@ End Structure
 ## Structures and Procedures  
  You can pass a structure as a procedure argument. The following example illustrates this.  
   
-```vb  
+```vb#  
 Public currentCPUName As String = "700MHz Pentium compatible"  
 Public currentMemorySize As Long = 256  
 Public Sub fillSystem(ByRef someSystem As systemInfo)  
@@ -107,7 +95,7 @@ End Sub
   
  You can also return a structure from a `Function` procedure. The following example illustrates this.  
   
-```vb  
+```vb#  
 Dim allSystems(100) As systemInfo  
 Function findByDate(ByVal searchDate As Date) As systemInfo  
     Dim i As Integer  
@@ -121,7 +109,7 @@ End Function
 ## Structures Within Structures  
  Structures can contain other structures. The following example illustrates this.  
   
-```vb  
+```vb#  
 Public Structure driveInfo  
     Public type As String  
     Public size As Long  
@@ -134,7 +122,7 @@ Public Structure systemInfo
 End Structure  
 ```  
   
-```vb  
+```vb#  
 Dim allSystems(100) As systemInfo  
 ReDim allSystems(1).diskDrives(3)  
 allSystems(1).diskDrives(0).type = "Floppy"  

@@ -1,9 +1,13 @@
 ---
 title: "short (C# Reference) | Microsoft Docs"
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "short"
@@ -16,22 +20,11 @@ ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
 caps.latest.revision: 17
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # short (C# Reference)
+[!INCLUDE[csharpbanner](../../../csharp/includes/csharpbanner.md)]
+
 The `short` keyword denotes an integral data type that stores values according to the size and range shown in the following table.  
   
 |Type|Range|Size|.NET Framework type|  
@@ -100,7 +93,7 @@ short y = (short)3.0;   // OK: explicit conversion
  For more information on implicit numeric conversion rules, see the [Implicit Numeric Conversions Table](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
   
 ## See Also  
  <xref:System.Int16>   

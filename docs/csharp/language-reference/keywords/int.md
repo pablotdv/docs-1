@@ -1,9 +1,13 @@
 ---
 title: "int (C# Reference) | Microsoft Docs"
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "int_CSharpKeyword"
@@ -16,22 +20,11 @@ ms.assetid: 212447b4-5d2a-41aa-88ab-84fe710bdb52
 caps.latest.revision: 19
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # int (C# Reference)
+[!INCLUDE[csharpbanner](../../../csharp/includes/csharpbanner.md)]
+
 The `int` keyword denotes an integral type that stores values according to the size and range shown in the following table.  
   
 |Type|Range|Size|.NET Framework type|Default Value|  
@@ -75,7 +68,7 @@ int y = (int)3.0;    // OK: explicit conversion.
  For more information on arithmetic expressions with mixed floating-point types and integral types, see [float](../../../csharp/language-reference/keywords/float.md) and [double](../../../csharp/language-reference/keywords/double.md).  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
   
 ## See Also  
  <xref:System.Int32>   

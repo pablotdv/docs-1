@@ -1,13 +1,13 @@
 ---
 title: "Refactoring and Rename Dialog Box (Visual Basic) | Microsoft Docs"
-
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
-
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "vb.RenameSymbol"
@@ -18,27 +18,14 @@ helpviewer_keywords:
   - "names, changing symbol"
   - "Rename dialog box"
 ms.assetid: 001d2d81-9bb6-4e8e-ae3a-20c0daaa3959
-redirect_url: https://msdn.microsoft.com/library/ckfya594(v=vs.140).aspx
 caps.latest.revision: 11
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # Refactoring and Rename Dialog Box (Visual Basic)
+[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+
 Use Visual Basic's built-in **Rename** dialog box to rename identifiers in your code for symbols such as fields, local variables, methods, namespaces, properties, and types. You can open the **Rename** dialog box by right-clicking the element declaration.  
   
  **New Name**  

@@ -2,12 +2,12 @@
 title: "Object-Oriented Programming (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "VB"
@@ -15,14 +15,11 @@ ms.assetid: 49794de4-64c3-473c-b8ed-fe98835df69c
 caps.latest.revision: 4
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: "wpickett"
 ---
 # Object-Oriented Programming (Visual Basic)
+[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+
 Visual Basic provides full support for object-oriented programming including encapsulation, inheritance, and polymorphism.  
   
  *Encapsulation* means that a group of related properties, methods, and other members are treated as a single unit or object.  
@@ -72,7 +69,7 @@ Visual Basic provides full support for object-oriented programming including enc
   
  To define a class:  
   
-```vb  
+```vb#  
 Class SampleClass  
 End Class  
 ```  
@@ -81,7 +78,7 @@ End Class
   
  To define a structure:  
   
-```vb  
+```vb#  
 Structure SampleStructure  
 End Structure  
 ```  
@@ -100,7 +97,7 @@ End Structure
   
  To define a field:  
   
-```vb  
+```vb#  
 Class SampleClass  
     Public SampleField As String  
 End Class  
@@ -112,7 +109,7 @@ End Class
   
  To define an auto-implemented property:  
   
-```vb  
+```vb#  
 Class SampleClass  
     Public Property SampleProperty as String  
 End Class  
@@ -120,7 +117,7 @@ End Class
   
  If you need to perform some additional operations for reading and writing the property value, define a field for storing the property value and provide the basic logic for storing and retrieving it:  
   
-```vb  
+```vb#  
 Class SampleClass  
     Private m_Sample As String  
     Public Property Sample() As String  
@@ -158,7 +155,7 @@ End Class
   
  To define a method of a class:  
   
-```vb  
+```vb#  
 Class SampleClass  
     Public Function SampleFunc(ByVal SampleParam As String)  
         ' Add code here  
@@ -170,7 +167,7 @@ End Class
   
  To overload a method:  
   
-```vb  
+```vb#  
 Overloads Sub Display(ByVal theChar As Char)  
     ' Add code that displays Char data.  
 End Sub  
@@ -196,7 +193,7 @@ End Sub
   
  To define a constructor for a class:  
   
-```vb  
+```vb#  
 Class SampleClass  
     Sub New(ByVal s As String)  
         // Add code here.  
@@ -209,10 +206,10 @@ End Class
 ####  <a name="Destructors"></a> Destructors  
  Destructors are used to destruct instances of classes. In the .NET Framework, the garbage collector automatically manages the allocation and release of memory for the managed objects in your application. However, you may still need destructors to clean up any unmanaged resources that your application creates. There can be only one destructor for a class.  
   
- For more information about destructors and garbage collection in the .NET Framework, see [Garbage Collection](../../../standard/garbagecollection/index.md).  
+ For more information about destructors and garbage collection in the .NET Framework, see [Garbage Collection](../Topic/Garbage%20Collection.md).  
   
 ####  <a name="Events"></a> Events  
- Events enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the *publisher* and the classes that receive (or handle) the event are called *subscribers*. For more information about events, how they are raised and handled, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Events enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the *publisher* and the classes that receive (or handle) the event are called *subscribers*. For more information about events, how they are raised and handled, see [Events](../Topic/Handling%20and%20Raising%20Events.md).  
   
 -   To declare events, use the [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
   
@@ -225,7 +222,7 @@ End Class
 ####  <a name="NestedClasses"></a> Nested Classes  
  A class defined within another class is called *nested*. By default, the nested class is private.  
   
-```vb  
+```vb#  
 Class Container  
     Class Nested  
     ' Add code here.  
@@ -235,7 +232,7 @@ End Class
   
  To create an instance of the nested class, use the name of the container class followed by the dot and then followed by the name of the nested class:  
   
-```vb  
+```vb#  
 Dim nestedInstance As Container.Nested = New Container.Nested()  
 ```  
   
@@ -257,13 +254,13 @@ Dim nestedInstance As Container.Nested = New Container.Nested()
 ###  <a name="InstantiatingClasses"></a> Instantiating Classes  
  To create an object, you need to instantiate a class, or create a class instance.  
   
-```vb  
+```vb#  
 Dim sampleObject as New SampleClass()  
 ```  
   
  After instantiating a class, you can assign values to the instance's properties and fields and invoke class methods.  
   
-```vb  
+```vb#  
 ' Set a property value.  
 sampleObject.SampleProperty = "Sample String"  
 ' Call a method.  
@@ -272,7 +269,7 @@ sampleObject.SampleMethod()
   
  To assign values to properties during the class instantiation process, use object initializers:  
   
-```vb  
+```vb#  
 Dim sampleObject = New SampleClass With   
     {.FirstProperty = "A", .SecondProperty = "B"}  
 ```  
@@ -288,7 +285,7 @@ Dim sampleObject = New SampleClass With
   
  To define a shared member:  
   
-```vb  
+```vb#  
 Class SampleClass  
     Public Shared SampleString As String = "Sample String"  
 End Class  
@@ -296,7 +293,7 @@ End Class
   
  To access the shared member, use the name of the class without creating an object of this class:  
   
-```vb  
+```vb#  
 MsgBox(SampleClass.SampleString)  
 ```  
   
@@ -313,7 +310,7 @@ MsgBox(SampleClass.SampleString)
   
  To create an instance of an anonymous type:  
   
-```vb  
+```vb#  
 ' sampleObject is an instance of a simple anonymous type.  
 Dim sampleObject =   
     New With {Key .FirstProperty = "A", .SecondProperty = "B"}  
@@ -329,7 +326,7 @@ Dim sampleObject =
   
  To inherit from a base class:  
   
-```vb  
+```vb#  
 Class DerivedClass  
     Inherits BaseClass  
 End Class  
@@ -339,14 +336,14 @@ End Class
   
  To specify that a class cannot be used as a base class:  
   
-```vb  
+```vb#  
 NotInheritable Class SampleClass  
 End Class  
 ```  
   
  To specify that a class can be used as a base class only and cannot be instantiated:  
   
-```vb  
+```vb#  
 MustInherit Class BaseClass  
 End Class  
 ```  
@@ -377,7 +374,7 @@ End Class
   
  To define an interface:  
   
-```vb  
+```vb#  
 Public Interface ISampleInterface  
     Sub DoSomething()  
 End Interface  
@@ -385,7 +382,7 @@ End Interface
   
  To implement an interface in a class:  
   
-```vb  
+```vb#  
 Class SampleClass  
     Implements ISampleInterface  
     Sub DoSomething  
@@ -407,7 +404,7 @@ End Class
   
  To define a generic class:  
   
-```vb  
+```vb#  
 Class SampleGeneric(Of T)  
     Public Field As T  
 End Class  
@@ -415,14 +412,14 @@ End Class
   
  To create an instance of a generic class:  
   
-```vb  
+```vb#  
 Dim sampleObject As New SampleGeneric(Of String)  
 sampleObject.Field = "Sample string"  
 ```  
   
  For more information, see:  
   
--   [Generics](https://msdn.microsoft.com/library/ms172192)  
+-   [Generics](../Topic/Generics%20in%20the%20.NET%20Framework.md)  
   
 -   [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
   
@@ -430,17 +427,17 @@ sampleObject.Field = "Sample string"
  A *delegate* is a type that defines a method signature, and can provide a reference to any method with a compatible signature. You can invoke (or call) the method through the delegate. Delegates are used to pass methods as arguments to other methods.  
   
 > [!NOTE]
->  Event handlers are nothing more than methods that are invoked through delegates. For more information about using delegates in event handling, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+>  Event handlers are nothing more than methods that are invoked through delegates. For more information about using delegates in event handling, see [Events](../Topic/Handling%20and%20Raising%20Events.md).  
   
  To create a delegate:  
   
-```vb  
+```vb#  
 Delegate Sub SampleDelegate(ByVal str As String)  
 ```  
   
  To create a reference to a method that matches the signature specified by the delegate:  
   
-```vb  
+```vb#  
 Class SampleClass  
     ' Method that matches the SampleDelegate signature.  
     Sub SampleSub(ByVal str As String)  
@@ -456,7 +453,7 @@ End Class
   
  For more information, see:  
   
--   [Delegates](../../../visual-basic/programming-guide/language-features/delegates/index.md)  
+-   [Delegates](../../../visual-basic/programming-guide/language-features/delegates/delegates.md)  
   
 -   [Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   

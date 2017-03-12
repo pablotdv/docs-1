@@ -2,7 +2,7 @@
 title: "How to: Filter on Element Names (LINQ to XML) (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,9 +15,11 @@ ms.assetid: b1437b4a-48aa-4546-834a-d6d3ab015fe1
 caps.latest.revision: 3
 author: "stevehoag"
 ms.author: "shoag"
-
+manager: "wpickett"
 ---
 # How to: Filter on Element Names (LINQ to XML) (Visual Basic)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 When you call one of the methods that return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, you can filter on the element name.  
   
 ## Example  
@@ -25,10 +27,23 @@ When you call one of the methods that return <xref:System.Collections.Generic.IE
   
  This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```vb  
+Dim po As XElement = XElement.Load("PurchaseOrder.xml")  
+Dim items As IEnumerable(Of XElement) = _  
+    From el In po...<ProductName> _  
+    Select el  
+For Each prdName As XElement In items  
+    Console.WriteLine(prdName.Name.ToString & ":" & prdName.Value)  
+Next  
+```  
+  
  This code produces the following output:  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```  
+ProductName:Lawnmower  
+ProductName:Baby Monitor  
+```  
+  
  The other methods that return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> collections follow the same pattern. Their signatures are similar to <xref:System.Xml.Linq.XContainer.Elements%2A> and <xref:System.Xml.Linq.XContainer.Descendants%2A>. The following is the complete list of methods that have similar method signatures:  
   
 -   <xref:System.Xml.Linq.XNode.Ancestors%2A>  

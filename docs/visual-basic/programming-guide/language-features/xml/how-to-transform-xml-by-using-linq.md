@@ -2,7 +2,7 @@
 title: "How to: Transform XML by Using LINQ (Visual Basic) | Microsoft Docs"
 ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
+ms.prod: "visual-studio-dev14"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,28 +18,16 @@ ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
 caps.latest.revision: 14
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+manager: "wpickett"
 ---
 # How to: Transform XML by Using LINQ (Visual Basic)
+[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+
 [XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md) make it easy to read XML from one source and transform it to a new XML format. You can take advantage of LINQ queries to retrieve the content to transform, or change content in an existing document to a new XML format.  
   
  The example in this topic transforms content from an XML source document to HTML to be viewed in a browser.  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+ [!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note-settings-general-md.md)]  
   
 ### To transform an XML document  
   
@@ -47,7 +35,7 @@ translation.priority.ht:
   
 2.  Double-click the Module1.vb file created in the project to modify the Visual Basic code. Add the following code to the `Sub Main` of the `Module1` module. This code creates the source XML document as an <xref:System.Xml.Linq.XDocument> object.  
   
-    ```vb  
+    ```vb#  
     Dim catalog =   
       <?xml version="1.0"?>  
         <Catalog>  
@@ -85,7 +73,7 @@ translation.priority.ht:
   
      The resulting HTML document is written to a file by using the <xref:System.Xml.Linq.XElement.Save%2A> method.  
   
-    ```vb  
+    ```vb#  
     Dim htmlOutput =   
       <html>  
         <body>  
@@ -110,7 +98,7 @@ translation.priority.ht:
   
      Add the following code after `Sub Main` of `Module1`.  
   
-    ```vb  
+    ```vb#  
     Public Function TransformDescription(ByVal desc As XElement) As XElement  
   
       ' Replace <technology> elements with <b>.  

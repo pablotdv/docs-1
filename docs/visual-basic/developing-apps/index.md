@@ -1,13 +1,13 @@
 ---
 title: "Developing Applications with Visual Basic | Microsoft Docs"
-
+ms.custom: ""
 ms.date: "2015-07-20"
-ms.prod: .net
-
-
+ms.prod: "visual-studio-dev14"
+ms.reviewer: ""
+ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
+ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
   - "VB"
@@ -18,24 +18,11 @@ ms.assetid: 1e1c0c81-6d95-4167-a98b-44b1efb6d25f
 caps.latest.revision: 26
 author: "stevehoag"
 ms.author: "shoag"
-
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+manager: "wpickett"
 ---
 # Developing Applications with Visual Basic
+[!INCLUDE[vs2017banner](../../visual-basic/includes/vs2017banner.md)]
+
 This section covers conceptual documentation for the Visual Basic language.  
   
 ## In This Section  
